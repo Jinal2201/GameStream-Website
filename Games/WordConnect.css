@@ -1,0 +1,168 @@
+.wcimg{
+    width: 100%;
+    opacity: 0.9;
+}
+.wcdiv{
+    position: absolute;
+    top: 180px;
+    left: 200px;
+    width: 1100px;
+    text-align: center;
+    color: white;
+}
+.wcdiv h1{
+    font-size: 60px;
+}
+.wcdiv h1 span{
+    color: orangered;
+   position: relative;
+   left: 10px;
+}
+.WCtable1{
+    margin-top: 100px;
+    margin-left:150px;
+    margin-bottom: 100px;
+    width: 80%;
+    border: 1px solid orangered;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 10px orangered;
+    background-color: bisque;
+}
+.WCimg1{
+    width: 300px;
+    height:550px;
+}
+.WCtable1 h1{
+    font-size: 50px;
+    color: orangered;
+}
+.WCtable1 p{
+    padding: 5px;
+}
+
+.Featurestable{
+    width: 100%;
+    background-image: url('../Images/feature_bg.jpeg');
+    padding: 30px;
+    color: white;
+}
+.Featurestable p{
+    padding: 0px;
+}
+.Featurestable div{
+    border: 3px solid orangered;
+    width: 400px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.Featurestable div p{
+    font-size: 15px;
+}
+.Featurestable div:hover{
+    background-color: whitesmoke;
+    color: black;
+    border: 3px solid whitesmoke;
+}
+.Featurestable h1{
+    color: orangered;
+    font-size: 50px;
+}
+.Featurestable h3{
+    color: orangered;
+}
+.leftcaret{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: -110px;
+    right: 10px;
+    color: orange;
+}
+.rightcaret{
+    width: 80px;
+    height: 80px;
+    position:relative ;
+    top: 220px;
+    left: 10px;
+    color: orange;
+}
+.WC_image{
+    width: 270px;
+    height: 600px;
+    border-radius: 10px;
+}
+.WCwork1{
+    margin-top: 100px;
+    width: 90%;
+    margin-left: 100px;
+}
+.WCDIV1{
+    display: flex;
+}
+.WCDIV1 div{
+    width: 300px;
+    border: 5px solid orange;
+    background-color: rgb(108, 108, 108);
+    position: relative;
+    top: -160px;
+    padding: 10px;
+    border-radius: 20px;
+    right: 30px;
+}
+.WCDIV1 div h2{
+    color: orange;
+}
+.WCDIV1 p{
+    padding: 0px;
+    color: white;
+}
+.WCDIV2{
+    display: flex;
+}
+.WCDIV2 p{
+    padding: 0px;
+    color: white;
+}
+.WCDIV2 div{
+    width: 300px;
+    border: 5px solid orange;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    top: 160px;
+    left: 30px;
+}
+.WCDIV2 div h2{
+    color: orange;
+}
+
+.a1pludoDIV1{
+    display: flex;
+}
+.a1pludoDIV1 div{
+    width: 300px;
+    border: 5px solid orange;
+    background-color: rgb(108, 108, 108);
+    position: relative;
+    top: -160px;
+    padding: 10px;
+    border-radius: 20px;
+    right: 300px;
+}
+.a1pludoDIV1 div h2{
+    color: orange;
+}
+.a1pludoDIV1 p{
+    padding: 0px;
+    color: white;
+}
+.left_caret{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: -110px;
+    right: 280px;
+    color: orange;
+}

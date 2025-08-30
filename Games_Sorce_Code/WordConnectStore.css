@@ -1,0 +1,45 @@
+.StoreHeader{
+    background-color: black;
+    height: 120px;
+    width: 100%;
+}
+
+.StoreImg1{
+    width: 700px;
+    height: 500px;
+}
+
+.WCTable{
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.WCTable p{
+    padding: 0px;
+}
+.priceh1{
+    color: green;
+}
+.WCDiv{
+    margin-left: 50px;
+}
+.WCTable h1{
+    color: orange;
+}
+.ContainorBtn{
+    display: flex;
+    gap: 20px;
+}
+.ContainorBtn p{
+    width: 130px;
+    padding: 20px;
+    font-weight: 700;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+a.ademo{
+    text-decoration: none;
+    color: white;
+}

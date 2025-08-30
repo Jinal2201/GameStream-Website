@@ -1,0 +1,73 @@
+.hjimg{
+    width: 100%;
+    height: 750px;
+    opacity: 0.9;
+}
+.hajariimg1{
+    width: 500px;
+}
+.HJwork1{
+    width: 90%;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.HJ_image{
+    width: 500px;
+}
+.cl{
+    width: 80px;
+    height: 80px;
+    color: orange;
+    position: relative;
+    top: 80px;
+}
+.HJDIV1{
+    display: flex;
+}
+.HJDIV1 div{
+    width: 700px;
+    height: 150px;
+    border: 5px solid orange;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    top: 40px;
+    right: 20px;
+
+}
+.HJDIV1 div h2{
+    color: orange;
+}
+.HJDIV1 p{
+    padding: 0px;
+    color: white;
+}
+.HJDIV2{
+    display: flex;
+}
+.HJDIV2 div{
+    width: 700px;
+    height: 150px;
+    border: 5px solid orange;
+    background-color: rgb(108, 108, 108);
+    padding: 10px;
+    border-radius: 20px;
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+.HJDIV2 div h2{
+    color: orange;
+}
+.HJDIV2 p{
+    padding: 0px;
+    color: white;
+}
+.cr{
+    width: 80px;
+    height: 80px;
+    color: orange;
+    position: relative;
+    top: 100px;
+}

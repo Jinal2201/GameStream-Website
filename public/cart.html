@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        width: 100%;
+        
+        margin-top: 50px;
+    }
+    th{
+        width: 300px;
+        text-align: center;
+        font-size: 30px;
+        background-color: orangered;
+        color: wheat;
+        
+    }
+    .th1{
+        width: 300px;
+        text-align: left;
+        padding-left: 10px;
+        font-size: 25px;
+        background-color: white;
+        color: orangered;
+        background-color: rgb(249, 193, 173);
+    }
+    .cart-row {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-cell {
+  padding: 10px 15px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+background-color: rgb(246, 232, 205);
+}
+
+.cartTotal{
+     margin-top: 50px;
+     width: 40%;
+     margin-left: 910px;
+     
+}
+.cartTotal td{
+    text-align: center;
+    padding-left: 10px;
+    background-color:rgb(246, 232, 205) ;
+}
+h1.cart{
+    background-color: orangered;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-size: 60px;
+    padding-top: 20px;
+    text-align: center;
+}
+.storebtn{
+    position: absolute;
+    top: 70px;
+    left: 1400px;
+    padding: 10px;
+    background-color: rgb(246, 232, 205);
+    border: 1px solid rgb(246, 232, 205);
+    border-radius: 20px;
+    
+}
+.storebtn a{
+    text-decoration:none;
+    color: orangered;
+    font-size: 20px;
+}
+.checkoutbtn{
+    padding: 10px;
+    background-color: orangered;
+    border-radius: 20px;
+    color: white;
+    border:1px solid orangered;
+    width: 400px;
+    font-size: 20px;
+}
+.checkoutbtn a{
+    text-decoration: none;
+    color: white;
+}
+</style>
+<body>
+    <h1 class="cart">Cart</h1>
+    <button class="storebtn"><a href="http://localhost:3000/store">Store</a></button>
+    <table id="cartTable">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Game</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Update</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <table class="cartTotal">
+        <tr class="tr1">
+            <th colspan="2">
+                Cart Total
+            </th>
+        </tr>
+        <tr>
+            <th class="th1">Subtotal:</th>
+            <td id="subtotal">₹0</td>
+        </tr>
+        <tr>
+            <th class="th1">Total:</th>
+            <td id="total">₹0</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button id="checkout-button" class="checkoutbtn"><a href="http://localhost:5000/checkout.html">Proceed to Checkout</a></button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+
+<script>
+function loadCart() {
+    fetch("http://localhost:5000/cart")
+        .then(response => response.json())
+        .then(data => {
+            let table = document.querySelector("#cartTable tbody");
+            table.innerHTML = "";
+            data.forEach(item => {
+                let row = `
+                    <tr class="cart-row">
+                         <td class="cart-cell"><img src="${item.image}" width="60" height="60" /></td>
+                        <td class="cart-cell">${item.name}</td>
+                        <td class="cart-cell">₹${item.total_price / item.quantity}</td>
+                        <td class="cart-cell">${item.quantity}</td>
+                        <td class="cart-cell">₹${item.total_price}</td>
+                        <td class="cart-cell">
+                            <button onclick="updateQuantity(${item.id}, ${item.quantity - 1})" ${item.quantity <= 1 ? "disabled" : ""}>-</button>
+                            <button onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                        </td>
+                        <td class="cart-cell"><button onclick="removeFromCart(${item.id})">Remove</button></td>
+                    </tr>
+                `;
+                table.innerHTML += row;
+            });
+            let subtotal = 0;
+            data.forEach(item => {
+            subtotal +=  parseFloat(item.total_price);
+            });
+            document.getElementById("subtotal").innerText = `₹${subtotal.toFixed(2)}`;
+             // If you want to add tax/shipping, you can modify this:
+            let total = subtotal; 
+            document.getElementById("total").innerText = `₹${total.toFixed(2)}`;
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+function removeFromCart(id) {
+    fetch(`http://localhost:5000/cart/${id}`, { method: "DELETE" })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            loadCart();
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+function updateQuantity(id, newQuantity) {
+    fetch(`http://localhost:5000/cart/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quantity: newQuantity })
+    })
+    .then(response => response.json())
+    .then(data => {
+        loadCart();
+    })
+    .catch(error => console.error("Error:", error));
+}
+
+
+
+loadCart();
+</script>

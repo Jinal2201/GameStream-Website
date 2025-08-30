@@ -1,0 +1,68 @@
+.footerLogo{
+   background-color: orangered;
+   height: 100px;
+   width: 200px;
+}
+.footerTable{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 90%;
+}
+.footerTable h1{
+    color: orangered;
+    font-size: 50px;
+}
+.footerBtn{
+    border: 2px solid orangered;
+    width: 170px;
+    padding: 10px;
+    font-size: 25px;
+    color: orangered;
+    border-radius: 20px;
+    position: relative;
+    left: 580px;
+}
+
+.footerBtn:hover{
+    color: white;
+    background-color: orangered;
+}
+.footerTable p{
+    color: rgb(141, 141, 141);
+}
+.footer{
+    margin-left: 100px;
+    width: 90%;
+    border-style: double;
+    border-color: orangered;
+    border-width: 5px;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 20px;
+}
+
+.container{
+    display: flex;
+    gap: 250px;
+}
+.container h1{
+    color: orangered;
+}
+ul.footerul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+ul.footerul li{
+    color: black; 
+    position: relative;
+    padding-left: 25px;
+}
+
+ ul.footerul li::before {
+    content: "➤ "; 
+    position: absolute;
+    left: 0;
+    color: orangered; 
+  }
+  
+

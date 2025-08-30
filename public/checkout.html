@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5e1;
+    }
+
+    header {
+      background-color: #ff4500;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      flex: 1;
+      margin-right: 30px;
+    }
+
+    h2 {
+      color: #ff4500;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    select{
+      width: 105%;
+    }
+    textarea {
+      height: 80px;
+      resize: vertical;
+    }
+
+    .order-summary {
+      flex: 1;
+      border-left: 2px solid #eee;
+      padding-left: 30px;
+    }
+
+    .order-summary h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .order-summary p {
+      font-size: 16px;
+      margin: 6px 0;
+    }
+
+    .order-summary .total {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2e8b57;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ff4500;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #e03e00;
+    }
+    .storebtn{
+    position:absolute;  
+    left: 1400px;
+    top: 15px;
+    padding: 10px;
+    background-color: rgb(246, 232, 205);
+    border: 1px solid rgb(246, 232, 205);
+    border-radius: 20px;   
+}
+.storebtn:hover{
+  background-color: rgb(246, 232, 205);
+  border: 1px solid rgb(246, 232, 205);
+}
+.storebtn a{
+    text-decoration:none;
+    color: orangered;
+    font-size: 20px;
+}
+  </style>
+</head>
+<body>
+
+  <header>Checkout</header>
+  <button class="storebtn"><a href="http://localhost:3000/store">Store</a></button>
+
+  <div class="container">
+    <form id="checkout-form">
+      <h2>Billing Details</h2>
+      <input type="text" name="first_name" id="first_name" placeholder="First Name" required />
+      <input type="text" name="last_name" id="last_name" placeholder="Last Name" required />
+      <input type="text" name="company_name" id="company_name" placeholder="Company Name (optional)" />
+      <select name="country" id="country" required>
+        <option value="">Select Country</option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+      </select>
+      <input type="text" name="phone" id="phone" placeholder="Phone Number" required />
+      <input type="email" name="email" id="email" placeholder="Email Address" required />
+      <textarea name="notes" id="notes" placeholder="Order notes (optional)"></textarea>
+      <button type="submit">Place Order</button>
+    </form>
+
+    <div class="order-summary">
+      <h2>Your Order</h2>
+      <div id="order-summary" style="padding: 1rem; border: 1px solid #ddd; background: #f9f9f9;"></div>
+    </div>
+  </div>
+
+  <script>
+    async function loadOrderSummary() {
+      const res = await fetch('http://localhost:5000/api/cart');
+      const cart = await res.json();
+  
+      const summaryDiv = document.getElementById("order-summary");
+      let total = 0;
+  
+      if (!Array.isArray(cart) || cart.length === 0) {
+        summaryDiv.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+      }
+  
+      summaryDiv.innerHTML = cart.map(item => {
+        total += parseFloat(item.total_price);
+        return `<p>${item.game_name} × ${item.quantity} = ₹${parseFloat(item.total_price).toFixed(2)}</p>`;
+      }).join('');
+  
+      summaryDiv.innerHTML += `<p class="total"><strong>Total: ₹${total.toFixed(2)}</strong></p>`;
+    }
+  
+    document.getElementById("checkout-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+
+  console.log("Submitting checkout:", data); // Add this line
+
+  try {
+    const res = await fetch('http://localhost:5000/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (!res.ok) throw new Error("Failed to place order");
+
+    const result = await res.json();
+    alert(result.message || "Order placed!");
+
+    if (result.success) {
+      window.location.href = '/thankyou.html';
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("An error occurred while placing the order.");
+  }
+});
+
+
+    loadOrderSummary();
+  </script>
+  
+</body>
+</html>

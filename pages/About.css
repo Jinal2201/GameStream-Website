@@ -1,0 +1,77 @@
+.abouttable{
+    margin-top: 100px;
+    width: 90%;
+}
+.abouttable h1{
+    color: orangered;
+}
+.abouttable p{
+    padding: 0px;
+}
+.yearTab div{
+    margin-left: 100px;
+    margin-top: 100px;
+    text-align: center;
+    border: 5px solid rgb(251, 136, 94);
+    padding: 20px;
+    border-radius: 50%;
+    width: 200px;
+    height: 150px;
+}
+.yearTab div:hover{
+    background-color: burlywood;
+}
+.yearTab h1{
+   color: rgb(153, 48, 11);
+}
+.yearTab h2{
+    color: orangered;
+}
+.ourvalueTable{
+    width: 90%;
+    margin-left: 80px;
+    margin-top: 100px;
+    text-align: center;
+    border-style: double;
+    border-width: 5px;
+    border-color: orangered;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-left: none;
+    border-right: none;
+}
+.ourvalueTable h1{
+    color: orangered;
+}
+.ourvalueTable h2{
+    color: orangered;
+}
+.ourvalueTable div{
+    border: 5px solid burlywood;
+    height: 550px;
+    margin-left: 20px;
+    border-radius: 20px;
+    background-color: burlywood;
+}
+.ourvalueTable div:hover{
+    background-color: white;
+}
+.chooseTable{
+    width: 80%;
+    margin-left: 120px;
+    border-width:5px;
+    border-style: double;
+    border-color: burlywood;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.chooseTable h1{
+    color: orangered;
+}
+.chooseTable h2{
+    color: orangered;
+}
+.chooseTable p{
+  padding: 0px;
+}

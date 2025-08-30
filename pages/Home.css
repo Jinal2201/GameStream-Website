@@ -1,0 +1,202 @@
+.table1{
+    width: 90%;
+    margin-left: 100px;
+    margin-top: 100px;
+    border: 10px solid orangered;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #867dc1;
+    color: white;
+  }
+  .table1:hover{
+  background-color: rgb(252, 172, 143);
+  }
+  img.table1img1{
+    width: 200px;
+    height: 200px;
+  }
+  .table1 div.table1div1{
+    width: 200px;
+    height: 150px;
+    background-color: #563A9C;
+    border-radius: 20px;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 35px;
+    position: relative;
+    right: 40px;
+    top: -25px;
+    color: white;
+    font-weight: 700;
+    box-shadow: 5px 5px 5px 5px #6e62bb;
+  }
+  .table1 td.table1td1{
+    text-align: center;
+    padding: 20px;
+  }
+  img.table1img2{
+    width: 300px;
+    height: 500px;
+    position: relative;
+    left: 10px;
+  }
+  td.table1td1 p{
+    font-size: 20px;
+  }
+  td.table1td1 p.table1P1{
+    font-weight: 700;
+    color: black;
+  }
+  .table1 td.table1td1 h1{
+    color: rgb(117, 102, 76);
+    font-size: 40px;
+  }
+  
+  p.Btn{
+    border: 3px solid white;
+    width: 200px;
+    height: 30px;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #563A9C;
+  }
+  p.Btn a{
+    text-decoration: none;
+    color: white;
+  }
+  p.Btn:hover{
+    background-color: #6e62bb;
+    border: 3px solid white;
+  }
+
+.tabsOuter ul{
+    display: flex;
+    list-style: none;
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 0px;
+    gap: 20px;
+}
+.tabsOuter ul li button{
+  background-color: white;
+  border: 2px solid orangered;
+  padding: 10px;
+  font-size: 30px;
+  color: orangered;
+  cursor: pointer;
+  margin-left: 200px;
+  border-radius: 20px;
+}
+
+.activeButton{
+  background-color: orangered !important;
+  color: white !important;
+}
+
+.activeContent{
+  margin-left: 100px;
+}
+
+.showCasetable{
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 90%;
+}
+
+.showCaseImg{
+  border-radius: 30px;
+}
+
+.showCasetable h1{
+  font-size: 50px;
+  color: orangered;
+}
+
+.showCasetable p{
+  width: 200px;
+  text-align: center;
+  height: 26px;
+  border: 3px solid orangered;
+  color: white;
+  background-color: orangered;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  margin-left: 420px;
+}
+
+.showCasetable p:hover{
+  color: orangered;
+  background-color: white;
+}
+
+.video1{
+  margin-top: 100px;
+  width: 100%;
+}
+
+.videoDiv h1{
+    font-size: 100px;
+    color: orangered;
+    position: absolute;
+    top: 3800px;
+    left: 300px;
+}
+.videoDiv p{
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 4100px;
+  left: 380px;
+  text-align: center;
+}
+
+.commitmentTable{
+  width: 88%;background-color: rgb(230, 216, 196);
+  margin: 100px 0px 0px 100px;
+  padding: 20px;
+}
+.commitmentTable h1{
+  color: orangered;
+}
+.commitmentTable .commitmetnBtn{
+  width: 110px;
+  padding: 15px;
+  border: 2px solid orangered;
+  color: orangered;
+  font-size: 20px;
+  border-radius: 20px;
+}
+.commitmentTable .commitmetnBtn:hover{
+  color: white;
+  background-color: orangered;
+  border: 2px solid orangered;
+ 
+}
+.commitmentp{
+  padding: 10px 0px 10px 0px;
+}
+
+.gameDiv{
+  width: 100%;
+  background-image: linear-gradient(#C14600,#FF9D23,#E5D0AC);
+  text-align: center;
+  margin-top: 100px;
+  height: 200px;
+  font-size: 50px;
+  opacity: 0.9;
+}
+.gameDiv h1{
+  position: relative;
+  top: 30px;
+}
+.gameh2{
+  position: relative;
+  top: -140px;
+ color: #EDF4C2;
+ font-size: 30px;
+ margin-left: 600px;
+}

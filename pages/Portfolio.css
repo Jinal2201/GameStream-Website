@@ -1,0 +1,144 @@
+.gamegallery{
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+.item{
+    overflow: hidden;
+}
+.item img {
+    width:80%;
+    height:80%;
+    border-radius: 20px;
+    border:10px solid black;
+}
+
+.item img:hover {
+    border-radius: 0px;
+    border:15px solid orangered;
+    transform: scale(1.01);
+}
+
+.item h1{
+ color: orangered;
+}
+h1.wc{
+    position: relative;
+    left: 20px;
+}
+h1.hj{
+    position: relative;
+    left: 90px;
+}
+h1.bg{
+    position: relative;
+    left: 40px;
+}
+h1.p7{
+    position: relative;
+    left: 90px;
+}
+h1.ry{
+    position: relative;
+    left: 100px;
+}
+h1.tpl{
+    position: relative;
+    left: 20px;
+}
+h1.a1p{
+    position: relative;
+    left: 120px;
+}
+h1.bp{
+    position: relative;
+    left: 50px;
+}
+h1.color_run{
+    position: relative;
+    left: 60px;
+}
+h1.cb{
+    position: relative;
+    left: 50px;
+}
+h1.tpj{
+    position: relative;
+    left: 30px;
+}
+h1.ir{
+    position: relative;
+    left: 30px;
+}
+h1.hmp{
+    position: relative;
+    left: 30px;
+}
+h1.atp{
+    position: relative;
+    left: 40px;
+}
+h1.to{
+    position: relative;
+    left: 40px;
+}
+h1.yn{
+    position: relative;
+    left: 100px;
+}
+div.itemtd img.ludo{
+    width:290px;
+    height:470px;
+    border-radius: 20px;
+    border:10px solid black;
+    margin-left: 20px;
+}
+div.itemtd img.ludo:hover{
+    border-radius: 0px;
+    border:15px solid orangered;
+    transform: scale(1.01);
+}
+h1.al{
+    color: orangered;
+    position: relative;
+    left: 90px;
+}
+div.itemtd img.royal{
+    width:290px;
+    height:470px;
+    border-radius: 20px;
+    border:10px solid black;
+    margin-left: 50px;
+}
+div.itemtd img.royal:hover{
+    border-radius: 0px;
+    border:15px solid orangered;
+    transform: scale(1.01);
+}
+h1.rr{
+    color: orangered;
+    position: relative;
+    left: 90px;
+}
+div.itemtd img.diamond{
+    width:290px;
+    height:470px;
+    border-radius: 20px;
+    border:10px solid black;
+    margin-left: 60px;
+}
+div.itemtd img.diamond:hover{
+    border-radius: 0px;
+    border:15px solid orangered;
+    transform: scale(1.01);
+}
+h1.tpd{
+    color: orangered;
+    position: relative;
+    left: 50px;
+}
